@@ -1,0 +1,148 @@
+<!doctype=html>
+<html lang="pt-br">
+
+	<head>
+		<link rel=“stylesheet” href=“css/estilo.css”>
+		<title> Dona Decí </title>
+		<meta charset+"utf-8">
+		<meta name+"author" content="Matheus Pereira">
+		<meta name+"description" content = "Resumo do conteudo da Pagina">
+		<link rel="stylesheet" href="css/cadastro.css" />
+		<link rel="stylesheet" href="css/estilo.css" />
+	</head>
+
+
+	<header>
+				<div class="logo">
+					<div class="logo-imagem">	</div>
+					<div class="espaco-texto">
+						<texto-titulo> Dona Decí </texto-titulo>
+					</div>
+				</div>
+
+			<nav>
+                <div class="dp-menu">
+                    <ul>
+                        <li><a href="index.html" title="Dona Decí"> Início </a></li>
+                        <li> <a href="roupas.html" title="Roupas"> Roupas </a>
+                            <ul>
+                                <li><a href="#"> Cropped </a></li>
+                                <li><a href="#"> Vestidos </a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="antifrizz.html" title="Antifrizz"> Antifrizz </a>
+                            <ul>
+                                <li><a href="#"> Toucas </a></li>
+                                <li><a href="#"> Difusara </a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="acessorios.html" title="Acessorios"> Acessorios  </a>
+                            <ul>
+                                <li><a href="#"> Tiaras </a></li>
+                                <li><a href="#"> Bolsas </a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="sobre.html" title="Sobre nós"> Sobre nós </a> </li>
+                        <li> <a href="pagina_cadastro.html" title="Cadastro"> Cadastrar <a/> </li> 
+                    </ul>
+
+                </div>
+            </nav>
+
+			<div>
+				<script async src="https://cse.google.com/cse.js?cx=a5beff9b9eba17e10"></script>
+				<div class="gcse-search"></div>
+			</div>
+
+		</header>
+
+	<body>
+		<div id="main-container">
+		<h1>Cadastre-se </h1>
+		<form id="formulario" method="POST" name="formulario" action="recebe.php">
+
+
+			<div class="caixa-grande"> 
+				<label for="nome"> Nome </label>
+				<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo">
+
+			<div class="caixa-grande"> 
+				<label for="email"> E-mail </label>
+				<input type="email" name="email" id="email" placeholder="Digite seu email">
+
+			<div class="caixa-grande"> 
+				<label for="cpf"> CPF </label>
+				<input type="text" name="cpf" maxlength="11" id="cpf" placeholder="Digite o seu CPF / 11 Dígitos ">
+
+			<div class="caixa-grande">  
+				    
+				    <label>CEP: <input type="text" id="cep" maxlength="9" placeholder="12345-678" autofocus><br></label>
+				    <label>Bairro: <input type="text" id="bairro"><br></label>
+				    <label>Cidade: <input type="text" id="cidade"><br> </label>
+				    <label>UF: <input type="text" id="uf"><br></label>
+				    <label>Endereço: <input type="text" id="endereco"></label>
+				    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+				<script>
+			
+			$("#cep").blur(function(){
+				// Remove tudo o que não é número para fazer a pesquisa
+				var cep = this.value.replace(/[^0-9]/, "");
+				
+				if(cep.length != 8){
+					return false;
+				}
+
+				var url = "https://viacep.com.br/ws/"+cep+"/json/";
+
+				$.getJSON(url, function(dadosRetorno){
+					try{		
+						$("#endereco").val(dadosRetorno.logradouro);
+						$("#bairro").val(dadosRetorno.bairro);
+						$("#cidade").val(dadosRetorno.localidade);
+						$("#uf").val(dadosRetorno.uf);
+					}catch(ex){}
+				});
+			});
+				</script>    
+
+			<div class="caixa-grande"> 
+				<button type="button" class="botao" onclick="validar()"> Cadastrar </button>
+
+				<script>
+					function validar(){
+
+						var nome = formulario.nome;
+						if (nome.value == ""){
+							alert("Você não informou seu nome");
+							nome.focus();
+						}
+
+						var email = formulario.email;
+						if (email.value == ""){
+							alert("Faltou o EMAIL");
+							email.focus();
+						}
+
+						var cpf = formulario.cpf;
+						if (cpf.value == ""){
+							alert("Cadê o seu CPF??");
+							cpf.focus();
+						}
+
+					
+
+			        	var cep = formulario.cep;
+						if (cep.value == ""){
+							alert("Você não informou seu cep");
+							cep.focus();
+						}
+
+					}	
+				</script>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

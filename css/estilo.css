@@ -1,0 +1,131 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+header {
+	width: 100%;
+	background-color: #d5a286;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px 0px;
+}
+
+.logo-imagem {
+	width: 50px;
+	height: 50px;
+	background-color: black;
+	border-radius: 5px;
+	background-image: url(../imagens/logo.png);
+	background-size: cover;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+}
+
+.espaco-texto {
+	margin-left: 50px;
+	color: #b61b1b;
+}
+
+texto-titulo{
+	font-size: 20px;
+	text-decoration: none;
+	color: #000000;
+	padding: 5px 25px;
+	background-color: #FFFFFF;
+}
+
+.dp-menu ul{
+	list-style-type: none;
+	padding: 0;
+
+
+}
+
+.dp-menu ul{
+	background-color: #d5a286;
+	position: relative ;
+}
+
+.dp-menu ul li{
+	background: white;
+	display: inline-block;
+	border-radius: 0.5em;
+	box-shadow: 0 0.5em 1em ;
+}
+
+.dp-menu ul li a{
+	color: black;
+	display: block;
+	text-decoration: none;
+	padding: 10px;
+	transition: background .7s;
+	border-radius: 0.5em;
+	box-shadow: 0 0.5em 1em ;
+}
+
+.dp-menu ul li a:hover{
+	color: white;
+	background-color: #6d3330;
+}
+
+.dp-menu ul ul{
+	display: none;
+	position: absolute;
+}
+
+.dp-menu ul li:hover ul{
+	display: block;
+}
+
+.dp-menu ul ul li{
+	display: inline;
+}
+
+
+main {
+	color: white;
+	height: 100%;
+	background-color: none;
+}
+.sessao-roupas {
+	height: 400px;
+	background-image: url(../imagens/fundo_roupas.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.texto-roupas {
+	font-family: Montserrat;
+	width: 300px;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+
+
+.sessao-antifrizz {
+	height: 400px;
+	background-image: url(../imagens/fundo_antrifrizz.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.texto-antifrizz {
+	width: 300px;
+	font-size: 25px;
+	text-transform: uppercase;
+	background-color: white;
+}
+footer {
+	width: auto;
+	background: #d5a286;
+	text-align: center;
+	color: white;
+	padding: 20px 0px;
+}
